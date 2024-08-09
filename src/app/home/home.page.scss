@@ -1,9 +1,22 @@
-ion-button{
-    --background: purple;
-    --border-radius: 200px;
+
+
+ion-content {
+    --background: rgb(0, 2, 0);
 }
-img{
-    border-radius: 100%;
-    width: 150px;
-    height: 150px;
+
+ion-card {
+    --background: white;
+}
+
+.perfil-pic {
+    border-radius: 32px;
+    outline: 3px solid white;
+}
+
+.titulo-nome {
+    font-size: 3rem;
+}
+
+.titulo-objetivo {
+    font-size: 2rem;
 }
