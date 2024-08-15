@@ -10,6 +10,18 @@ import { MessageService } from '../services/message.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  recado = {
+    assunto: null
+  }
+
+  constructor(
+    private crudservice: CrudService
+   ){}
+
+  enviar(){
+    this.crudservice.insert(this.recado, 'recados');
+  }
+
   pessoa = {
     foto:'https://images.pexels.com/photos/22776051/pexels-photo-22776051/free-photo-of-mao-design-projeto-visual.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     nome: 'Toji Zenin',
@@ -49,5 +61,5 @@ export class HomePage {
     }
    ] 
   }
-  constructor(){ }
+  
 }
