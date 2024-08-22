@@ -10,6 +10,12 @@ import { MessageService } from '../services/message.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  usuario: any = {
+    email: null,
+    senha: null
+  }
+
+  id: any;
   recado = {
     assunto: null,
     mensagem: null
@@ -18,7 +24,8 @@ export class HomePage {
   recados: any = []; //any traz qualquer parada
 
   constructor(
-    public crudservice: CrudService
+    public crudservice: CrudService,
+    public authService: AuthenticateService
    ){}
 
 
@@ -43,6 +50,22 @@ export class HomePage {
   delete(id: string){
     this.crudservice.remove(id, "recados")
     this.carregar()
+  }
+  selecionar(recado: any) {
+    this.id = recado.id
+    this.recado = recado;
+    console.log(this.recado)
+  }
+  atualizar(){
+    this.crudservice.update(this.id, this.recado, 'recados')
+  }
+
+  registrar(){
+    this.authService.register(this.usuario.email, this.usuario.senha);
+  }
+
+  login(){
+    this.authService.login(this.usuario.email, this.usuario.senha);
   }
 
   pessoa = {
