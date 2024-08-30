@@ -6,10 +6,41 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cadastrar-funcionario.page.scss'],
 })
 export class CadastrarFuncionarioPage implements OnInit {
+  
+  funcionarios: any;
+
+  funcionario = { 
+    codigo: null,
+    nome: null,
+    sobrenome: null,
+    cargo: null,
+    salario: null,
+    data_nasc: null,
+    endereco: null,
+    cep: null,
+    pais: null,
+    fone: null,
+    cidade: null,
+  }
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  cadastrar(){
+    fetch('#')
+    .then(dados => dados.json())
+    .then(dados =>{
+      console.log(dados);
+      this.funcionarios = dados;
+    })
+    .catch(erro => {
+      console.log(erro);
+    })
+    .finally(()=>{
+      console.log("FInalizado!");
+    })
   }
 
 }

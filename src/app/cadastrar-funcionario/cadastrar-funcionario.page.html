@@ -5,9 +5,26 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">cadastrar-funcionario</ion-title>
-    </ion-toolbar>
-  </ion-header>
+ <ion-row class="ion-justify-content-center">
+  <ion-col size="12" size-lg="6">
+    <ion-card class="ion-padding">
+      
+    <ion-input label="Nome" [(ngModel)]="this.funcionario.nome"></ion-input>
+    <ion-input label="Sobrenome" [(ngModel)]="this.funcionario.sobrenome"></ion-input>
+    <ion-input label="Cargo" [(ngModel)]="this.funcionario.cargo"></ion-input>
+    <ion-input label="Salario" [(ngModel)]="this.funcionario.salario"></ion-input>
+    <ion-input label="Data Nascimento" [(ngModel)]="this.funcionario.data_nasc"></ion-input>
+    <ion-input label="Endereco" [(ngModel)]="this.funcionario.endereco"></ion-input>
+    <ion-input label="cidade" [(ngModel)]="this.funcionario.cidade"></ion-input>
+    <ion-input label="cep" [(ngModel)]="this.funcionario.cep"></ion-input>
+    <ion-input label="Pais" [(ngModel)]="this.funcionario.pais"></ion-input>
+    <ion-input label="Telefone" [(ngModel)]="this.funcionario.fone"></ion-input>
+    
+    <ion-item>
+      <ion-button slot="end" color="tertiary" (click)="cadastrar()">Cadastrar</ion-button>
+    </ion-item>
+  </ion-card>
+
+  </ion-col>
+ </ion-row>
 </ion-content>
